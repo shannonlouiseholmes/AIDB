@@ -5,12 +5,11 @@ import org.hibernate.validator.constraints.NotEmpty;
 import javax.persistence.*;
 
 @Entity
-@Table (name = "entries")
+@Table (name = "GUEST_BOOK_ENTRY")
 public class GuestBookEntry
 {
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
-    @Column (name = "entry_id")
     private Integer id;
 
     @NotEmpty
@@ -53,10 +52,5 @@ public class GuestBookEntry
     public String toString()
     {
         return super.toString();
-    }
-
-    GuestBookEntry ()
-    {
-        //setComment("");
     }
 }
