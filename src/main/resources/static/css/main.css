@@ -33,13 +33,13 @@ a, a:visited
 }
 a:hover
 {
-    color: olivedrab;
+    color: orangered;
 }
 
 .warning
 {
     color: yellowgreen;
-    background-color: cadetblue;
+    background-color: orangered;
     display: inline;
     padding: 8px;
     border: 2px yellow;

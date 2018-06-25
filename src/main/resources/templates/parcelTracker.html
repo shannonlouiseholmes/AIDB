@@ -3,16 +3,16 @@
 <head>
     <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
     <meta charset="UTF-8"/>
-    <title>Spring Guestbook</title>
+    <title>Postage Tracker</title>
 </head>
 <body>
-    <h1>Guestbook Comments</h1>
-    <img th:src="@{/css/images/book.jpg}" id="logo" />
+    <h1>Postage Status Tracking</h1>
+    <img th:src="@{/css/images/mail.png}" id="logo" />
 
     <div th:if="${!entries.isEmpty()}">
     <table>
         <tr>
-            <th>User</th><th>Comment</th><th>Delete</th><th>Update</th>
+            <th>Package ID</th><th>Status</th><th>Delete</th><th>Update</th>
         </tr>
         <tr th:each="entry: ${entries}">
             <td th:text="${entry.user}"></td>
@@ -25,22 +25,21 @@
 
     <h2 th:text="${formHeader}"></h2>
     <form th:object="${newEntry}" method="post">
-        <label>User: </label>
+        <label>Package ID: </label>
         <input type="text" size="32" th:field="*{user}" />
         <br />
-        <label>Comment: </label>
+        <label>Status: </label>
         <input type="text" size="64" th:field="*{comment}" />
         <br />
         <input type="submit" value="Submit" />
-        <p class="warning" th:if="${#fields.hasErrors('user')}">User cannot be empty.</p>
-        <p class="warning" th:if="${#fields.hasErrors('comment')}">Comment cannot be empty.</p>
+        <p class="warning" th:if="${#fields.hasErrors('user')}">Package ID cannot be empty.</p>
+        <p class="warning" th:if="${#fields.hasErrors('comment')}">Status cannot be empty.</p>
         <input type="reset" value="Reset" />
     </form>
 
     <div th:if="${entries.isEmpty()}">
-        <p>There are no comments in the Guestbook. What a pity.</p>
+        <p>There are no packages logged in the Tracker. Add a package using the form above.</p>
     </div>
-
 
 </body>
 </html>

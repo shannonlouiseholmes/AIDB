@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Table (name = "GUEST_BOOK_ENTRY")
-public class GuestBookEntry
+public class ParcelEntry
 {
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
